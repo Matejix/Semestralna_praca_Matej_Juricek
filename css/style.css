@@ -5,7 +5,7 @@ body {
 
   color: #999;
   font-size: 1rem;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins","Roboto", sans-serif;
 }
 
 .wrapper {
@@ -578,3 +578,215 @@ input[type=submit]{
   background-color: #fff;
   color:black;
 }
+
+/*______ABOUT US________________________________________*/
+
+.about-wrapper{
+  width: 80%;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.about-wrapper h1{
+  text-transform: uppercase;
+  transform: scaleY(1.5);
+  font-weight: 500;
+  font-size: 2.7em;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.about-wrapper h1 span{
+  color: #c5a47e;
+}
+
+.about-article{
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-img-wrapper{
+  position: relative;
+  width: 30%;
+  height: 400px;
+}
+
+.about-img{
+  width: 90%;
+  height: 100%;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+.about-img img{
+  position: relative;
+  transform: translateX(-10%);
+  height: 400px;
+}
+.img-dotted-shadow{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: radial-gradient(#c5a47e 20%, #272727 20%);
+  background-size: 10px 10px;
+  width: 90%;
+  height: 400px;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.about-text{
+  width: 70%;
+  padding-left: 3em;
+}
+
+.about-text h2{
+color: #fff;
+font-weight: 400;
+font-size: 1.7em;
+}
+
+.about-text h2 span{
+  color: #c5a47e;
+}
+
+.about-text p{
+  font-weight: 300;
+  line-height: 1.7em;
+}
+
+.experience-block{
+  display: flex;
+}
+
+.number{
+  font-size: 7em;
+  transform: scaleY(1.3); 
+  color: #c5a47e;
+  font-weight: 500;
+}
+
+.year{
+  padding-top: 4em;
+  margin-left: 1.5em;
+}
+.year h4{
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.year h6{
+  color: #c5a47e;
+  font-weight: 300;
+  font-size: 0.9em;
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+.employees-wrapper{
+  margin: 5em 0;
+}
+
+.employees-wrapper,
+.reviews-from-visitor-wrapper{
+  margin: 50px 0 0 auto;
+  width: 75%;
+}
+
+.employees-list,
+.visitor-list{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.employees,
+.visitors{
+  display: flex;
+  justify-content: center;
+}
+
+.one-employee{
+  margin: 1em;
+}
+
+
+.info-text{
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  font-weight: 300;
+  font-size: 0.9em;
+}
+
+.info-text span:first-child{
+  margin-top: 1em;
+  margin-bottom: .2em;
+  color: #c5a47e;
+}
+.dots{
+  cursor: pointer;
+}
+
+.dots i{
+  transition: 0.5s ease;
+  font-size: 0.6em;
+}
+.dots .active,
+.dots i:hover{
+  color:#c5a47e;
+}
+
+
+.review{
+  background-color: #333;
+  border-radius: 15px;
+  width: 40%;
+  margin: 1em;
+  text-align: center;
+}
+
+.review p{
+  padding: 0 2em;
+  font-size: 0.9em;
+  font-weight: 400;
+  line-height: 1.7em;
+  text-align: left;
+}
+
+.review i{
+  font-size: 3em;
+  color: #c5a47e;
+  opacity: 0.8;
+  padding-top: 0.5em;
+}
+
+.visitor-info{
+  display: flex;
+  padding: 1em 2em 3em 2em;
+  text-align: left;
+}
+.visitor-info img{
+  border-radius: 50%;
+  width: 50px;
+  margin-right: 1em;
+}
+
+.column-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.column-info span{
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
+.column-info span:first-child{
+  color: #c5a47e;
+}
+
