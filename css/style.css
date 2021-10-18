@@ -250,6 +250,7 @@ body {
     padding: 15px;
     background-color: #333;
     z-index: 60;
+    box-shadow: 5px 5px 15px 5px #222;
 }
 .hamburger{
     background: none;
@@ -743,10 +744,13 @@ font-size: 1.7em;
 
 .review{
   background-color: #333;
-  border-radius: 15px;
-  width: 40%;
-  margin: 1em;
-  text-align: center;
+    border-radius: 15px;
+    width: 40%;
+    margin: 1em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .review p{
@@ -869,6 +873,7 @@ font-size: 1.7em;
   }
   .discover-more-tags-links{
     display: flex;
+    justify-content: space-around;
   }
   .categories{
     margin: 0 20px;
@@ -883,6 +888,7 @@ font-size: 1.7em;
   }
   .side-bars ul {
     margin: 0;
+    padding-left: 1em;
   }
   
   .side-bars-headings{
@@ -1007,76 +1013,49 @@ font-size: 1.7em;
   }
   /*_________DSICOVER PAGER______________*/
 
-  .container.discover {
+  .side-bars-links {
     flex-direction: column;
-  }
-  
-  .side-bars {
-    width: 100%;
-    margin-top: 1em;
-  }
-  
-  .search-bar.shadow-boxes{
-    padding: 1em 0;
-  }
+}
 
-  .search-bar{
-    margin: 0 auto;
-    margin-bottom: 2em;
-    width: 40%;
-  }
-
-  .search-bar input {
-    margin: 0 auto;
-    padding: 0.5em 1em;
-    width: 80%;
-  }
-
-  .recent-posts {
-    width: 100%;
-    padding: 1em;
-  }
-  .side-bars-headings{
-    margin: 0;
-    padding: 0.5em;
-  }
-  .discover-more-tags-links{
-    display: flex;
-  }
-
-  .side-bars-headings{
-    margin-bottom: 0;
-    margin-top: 0;
-  }
-
-  .discover-more-tags-links{
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-
-  }
-
-  .categories.shadow-boxes{
-    position: relative;
-    left: -5%;
-    width: fit-content;
-    height: 227px;
-    padding: 1em;
-  }
-  .categories.shadow-boxes ul{
-    padding: 0;
-  }
-  .categories.shadow-boxes li{
-    font-weight: 300;
-  }
-  .tags.shadow-boxes{
-    position: relative;
-    right: -5%;
-    width: fit-content;
-    height: 227px;
-    padding: 1em;
-  }
+.search-bar.shadow-boxes {
+   padding-bottom: 0;
+   padding-top: 0;
+}
+.search-bar input {
+  width: 100%;
 } 
+
+.recent-posts {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 2em;
+}
+
+.side-bars .recent-posts ul {
+  padding-left: 3em;
+  padding-right: 3em;
+  padding-bottom: 2em;
+  padding-top: 1em;
+}
+
+.recent-posts li {
+  display: flex;
+  flex-direction: inherit;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.recent-posts img {
+  width: 25%;
+}
+
+.recent-posts a {
+  margin-left: 30px;
+}
+
+.categories {
+  margin: 0 20px 0 0;
+}
 
 @media screen and (max-width: 576px){
 
@@ -1110,36 +1089,16 @@ font-size: 1.7em;
 
   /*________Discover more page_____________*/
 
-  .shadow-boxes{
-    width: 100%;
+  .tags-boxes a {
+    font-size: 0.8em;
   }
 
-  .search-bar.shadow-boxes{
-    padding: 0;
+  .discover-more-tags-links {
+    margin-bottom: 4em;
   }
-  .search-bar{
-    padding-bottom: 0;
-    padding-top: 0;
-    margin-bottom: 2em;
-    width: 65%;
-  }
-
-  .search-bar input {
-    margin: 0;
-    padding: 0.5em 1em;
-    width: 100%;
-  }
-
-  
-
-  .categories.shadow-boxes h2,
-  .tags.shadow-boxes h2{
-    margin-left: 0;
-    font-size: 1.2em;
-  }
-  .tags-boxes ul {
-    display: contents;
-  }
+  .tags ul {
+    width: 200px;
+}
   .main-article {
     width: 100%;
     height: auto;
@@ -1195,4 +1154,5 @@ font-size: 1.7em;
   input[type=submit] {
     margin-top: 0;
     padding: 0.2em 0.5em;
+  }
 }
