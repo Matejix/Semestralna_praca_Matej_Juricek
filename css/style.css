@@ -612,17 +612,17 @@ input[type=submit]{
   height: 400px;
 }
 
-.about-img{
-  width: 90%;
+.about-img {
+  width: 250px;
   height: 100%;
   overflow: hidden;
   padding-top: 80px;
 }
 
-.about-img img{
+.about-img img {
   position: relative;
   transform: translateX(-10%);
-  height: 400px;
+  height: 360px;
 }
 .img-dotted-shadow{
   position: absolute;
@@ -630,8 +630,8 @@ input[type=submit]{
   right: 0;
   background-image: radial-gradient(#c5a47e 20%, #272727 20%);
   background-size: 10px 10px;
-  width: 90%;
-  height: 400px;
+  width: 250px;
+  height: 100%;
   opacity: 0.5;
   z-index: -1;
 }
@@ -746,6 +746,7 @@ font-size: 1.7em;
   background-color: #333;
     border-radius: 15px;
     width: 40%;
+    height: 100%;
     margin: 1em;
     text-align: center;
     display: flex;
@@ -822,6 +823,12 @@ font-size: 1.7em;
   .discover-more-tags-links{
     width: 100%;
   }
+
+  /*________ABOUT-US-PAGE_________*/
+  
+.employees-wrapper, .reviews-from-visitor-wrapper {
+  width: 100%;
+}
 
 @media screen and (max-width: 1270px) {
 
@@ -904,6 +911,29 @@ font-size: 1.7em;
     width: 80%;
     box-shadow: 50px -24px 0px 11px #333;
   }
+
+  /*______ABOUT US PAGE_______*/
+
+  .about-img-wrapper {
+    height: 330px;
+}
+  .about-img {
+    width: 201px;
+    padding-top: 45px;
+}
+  .about-img img {
+    height: 280px;
+}
+.img-dotted-shadow {
+  width: 160px;
+}
+
+.about-text {
+  width: 100%;
+}
+.about-wrapper {
+  width: 100%;
+}
 }
 
 @media screen and (max-width: 992px) {
@@ -952,6 +982,29 @@ font-size: 1.7em;
     width: 40%;
     height: auto;
   }
+
+  /*_______-ABOUT-US-PAGE________*/
+.about-img-wrapper {
+  height: 260px;
+}
+.about-img {
+  width: 150px;
+  padding-top: 20px;
+}
+.about-img img {
+  height: 235px;
+}
+.review p {
+  font-size: 0.8em;
+}
+
+.visitor-info {
+  align-items: center;
+  flex-direction: column;
+}
+.review i {
+  font-size: 2em;
+}
 }
 
 @media screen and (max-width: 790px) {
@@ -1057,6 +1110,19 @@ font-size: 1.7em;
   margin: 0 20px 0 0;
 }
 
+/*______-ABOUT-US-PAGE_________*/
+.about-img-wrapper {
+  display: none;
+}
+.employees, .visitors {
+  flex-direction: column;
+  align-items: center;
+}
+  .review{
+    width: 80%;
+  }
+}
+
 @media screen and (max-width: 576px){
 
   .logo img {
@@ -1154,5 +1220,12 @@ font-size: 1.7em;
   input[type=submit] {
     margin-top: 0;
     padding: 0.2em 0.5em;
+  }
+
+  /*_____ABOUT-US-PAGE______*/
+  
+  .review{
+    
+    width: 100%;
   }
 }
