@@ -1,6 +1,6 @@
 *{
   box-sizing: border-box;
-}
+  }
 body {
   position: relative;
   margin: 0;
@@ -572,7 +572,7 @@ input[type=submit]{
   padding: .5em 1em;
   background-color: #c5a47e;
   margin: 3px;
-  transition: 0.5 ease;
+  transition: 0.5s ease;
 }
 
 .tags-boxes a:hover{
@@ -1164,7 +1164,7 @@ font-size: 1.7em;
   }
   .tags ul {
     width: 200px;
-}
+  }
   .main-article {
     width: 100%;
     height: auto;
@@ -1225,7 +1225,7 @@ font-size: 1.7em;
   /*_____ABOUT-US-PAGE______*/
   
   .review{
-    
     width: 100%;
+  }
   }
 }
