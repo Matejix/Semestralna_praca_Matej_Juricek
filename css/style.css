@@ -329,7 +329,7 @@ body {
     opacity: 1;
 }
 
-/*_____DISCOVER_MORE.HTML____________________________*/
+/*_____DISCOVER_MORE.php____________________________*/
 
 .main-article{
   width: 60%;
@@ -431,13 +431,13 @@ textarea{
   resize: vertical;
 }
 
-input[type=submit]:hover{
+.submit:hover{
   background-color: #fff;
   color: black;
   
 }
 
-input[type=submit]{
+.submit{
   margin-top: 2em;
   padding: 1em 2em;
   background-color: #c5a47e;
@@ -795,10 +795,14 @@ font-size: 1.7em;
   color: #c5a47e;
 }
 
+/* ________________GALLERY PAGE ______________*/
+
+.tags-boxes .gallery-menu{
+  margin: 0 auto;
+}
 
 
-
-/*_______________RESPONSIVE____________*/
+/*_______________RESPONSIVE_________________________________________________________________________________________________*/
 
 @media screen and (max-width: 1470px) {
     
@@ -1217,7 +1221,7 @@ font-size: 1.7em;
   .answer-formular textarea {
     width: 100%;
   }
-  input[type=submit] {
+  .submit {
     margin-top: 0;
     padding: 0.2em 0.5em;
   }
