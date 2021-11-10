@@ -52,6 +52,14 @@ body {
   padding: 0;
 }
 
+.menu-item.login a{
+  color: #c5a47e;
+}
+
+.menu-item.login a:hover {
+  color: #f8d4ab;
+}
+
 .menu-item {
   font-size: 1.2em;
   margin: 0 1em;
@@ -85,6 +93,15 @@ body {
   flex-direction: row-reverse;
 }
 
+.part-one,
+.part-two{
+  display: flex;
+  position: relative;
+  opacity: 1;
+  transition: 1.5s ease;
+}
+
+
 .article {
   text-align: left;
   width: 35%;
@@ -92,6 +109,7 @@ body {
   z-index: 2;
   margin-top: 10em;
   margin-right: -3em;
+  opacity: 1;
 }
 
 
@@ -167,6 +185,7 @@ body {
   overflow: hidden;
   margin-left: -4em;
   box-shadow: 15em 0 #333;
+  opacity: 1;
 }
 .home_picture:hover img {
   transform: scale(1.05);
@@ -190,6 +209,7 @@ body {
     background: #272727;
     color: #c5a47e;
     font-size: 1.2em;
+    opacity: 1;
 }
 
 .arrow-right a{
@@ -797,10 +817,198 @@ font-size: 1.7em;
 
 /* ________________GALLERY PAGE ______________*/
 
-.tags-boxes .gallery-menu{
-  margin: 0 auto;
+.gallery-menu{
+  max-height: 100%;
 }
 
+.gallery-menu a{
+  color: white;
+  text-decoration: none;
+}
+
+.gallery-menu ul{
+  
+  position: sticky;
+  top: 10px;
+    padding-left: 0;
+    height: fit-content;
+    padding-bottom: 1em;
+  }
+
+.gallery-photos{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  margin-right: 10px;
+  }
+
+  .gallery-photos img{
+    width: 270px;
+    height: 100%;
+    border: 5px solid #444;
+    transition: 0.5s ease;
+  }
+
+  
+  .gallery-photos img:hover {
+    transform: scale(1.05);
+    border-color: #f8d4ab;
+  }
+
+/*_________LOGIN page____________________*/
+
+
+.login-box {
+  margin: 0 auto;
+  margin-top: 2em;
+  background-color: #333;
+  width: 455px;
+  height: fit-content;
+  padding-bottom: 3em;
+  border: 15px solid #272727;
+  box-shadow: 0px 0px 65px 1px #222;
+  opacity: 1;
+  transition: .5s ease;
+}
+
+.login-box form{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.login-input{
+  display: grid;
+  grid-template-columns: 0.1fr 1fr; 
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin-bottom: 1em;
+  
+}
+
+.login-input i{
+  background-color: #ddd;
+  color: #666;
+  padding-top: 15px;
+}
+
+.login-input input,
+.register-question input{
+  padding: 1em 0;
+}
+
+.login-input input::placeholder,
+.register-question input::placeholder{
+  font-size: 1.3em;
+  color:#aaa;
+  padding-left: 0.5em;
+}
+
+.profile-icon i{
+  color:#fff;
+  font-weight: 200;
+  font-size: 4em;
+  background-color: #c5a47e;
+  border-radius: 50%;
+  padding: 0.5em;
+  margin-top: -0.7em;
+  margin-bottom: 0.5em;
+}
+
+.login-box.register {
+  position: relative;
+}
+
+.login-box.register span{
+  position: absolute;
+    right: 15px;
+    top: 0px;
+    font-size: 2em;
+    transform: rotateX(45deg);
+    cursor: pointer;
+    color: #c5a47e;
+    transition: 0.5 ease;
+}
+
+.login-box.register span:hover{
+    color: #f8d4ab;
+}
+
+.login-register-link {
+  text-align: right;
+  color: #c5a47e;
+  font-size: 0.8em;
+}
+
+.login-box .submit {
+  margin-top: 1em;
+}
+
+.clickable{
+  pointer-events: none;
+}
+
+.register-question{
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-question input{
+  width: 100%;
+}
+
+.register-question label{
+  margin-bottom: 1em;
+}
+
+.register-question i{
+  position: relative;
+  color:#c5a47e;
+  cursor: pointer;
+}
+
+.login-box.not-registered{
+  transform:translate(999px);
+  opacity: 0;
+}
+
+.register-side-info{
+  position: absolute;
+  right:-100px;
+  background-color: rgb(230, 214, 146);
+  color: black;
+  font-size: 0.9em;
+  padding: 0.3em;
+  opacity: 0.9;
+  transition: 0.5s ease;
+}
+
+.hidden{
+  display: none;
+}
+
+.current{
+  background-color: #fff;
+  color:#222;
+}
+
+.visually-hidden{
+  opacity: 0;
+}
+
+.visually-hidden-left{
+  opacity: 0;
+  transform: translateX(999px);
+}
+
+.visually-hidden-right{
+  opacity: 0;
+  transform: translateX(-999px);
+}
 
 /*_______________RESPONSIVE_________________________________________________________________________________________________*/
 

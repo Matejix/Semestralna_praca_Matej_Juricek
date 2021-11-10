@@ -1,45 +1,8 @@
-<!DOCTYPE html>
-<html lang="sk">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zoo zu - About us</title>
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  </head>
-  <body>
-        <div class="wrapper">
-            <div class="button-menu-wrapper">
-                <button class="hamburger" type="button" id="hamburger-button">
-                <span class="hamburger-line top-left"></span>
-                <span class="hamburger-line middle"></span>
-                <span class="hamburger-line bottom-right"></span>
-                </button>
-            </div>
-
-            <div class="side-menu">
-                <ul class="menu">
-                <li class="menu-item"><a href="index.html">Home</a></li>
-                <li class="menu-item"><a href="about_us.html">About</a></li>
-                <li class="menu-item"><a href="#">Gallery</a></li>
-                </ul>
-            </div>
-
-            <div class="side-menu-shade"></div>
-
-            <div class="wrapper-middle-lines"></div>
-            <div class="logo">
-                <a href="index.html"><img src="./img/logo2.png" alt="Logo Zoo zu" /></a>
-            </div>
+<?php 
+  include("./inc/header.php");
+  include("./inc/menu.php");
+?>
+            
 
             <div class="container">
                 <div class="about-wrapper">
@@ -154,21 +117,6 @@
                 </div>
             </div>
 
-            <div class="footer">
-                <div class="social_icons light-orange">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-google-plus-g"></i>
-                </div>
-                <div class="copyright">
-                <p>
-                    ©<span class="light-orange"> Matejix</span>. All rights
-                    reserved.
-                </p>
-                </div>
-            </div>
-        </div>
-     <script src="./js/main.js"></script>
-</body>
-</html>
+<?php 
+  include("./inc/footer.php")
+?>

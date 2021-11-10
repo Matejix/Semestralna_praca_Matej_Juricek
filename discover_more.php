@@ -1,45 +1,14 @@
-<!DOCTYPE html>
-<html lang="sk">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zoo zu - Discover</title>
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  </head>
-  <body>
-        <div class="wrapper">
-            <div class="button-menu-wrapper">
-                <button class="hamburger" type="button" id="hamburger-button">
-                <span class="hamburger-line top-left"></span>
-                <span class="hamburger-line middle"></span>
-                <span class="hamburger-line bottom-right"></span>
-                </button>
-            </div>
+<?php 
+  include("./inc/header.php");
+  include("./inc/menu.php");
 
-            <div class="side-menu">
-                <ul class="menu">
-                <li class="menu-item"><a href="index.html">Home</a></li>
-                <li class="menu-item"><a href="about_us.html">About</a></li>
-                <li class="menu-item"><a href="#">Gallery</a></li>
-                </ul>
-            </div>
-
-            <div class="side-menu-shade"></div>
-
-            <div class="wrapper-middle-lines"></div>
-            <div class="logo">
-                <a href="index.html"><img src="./img/logo2.png" alt="Logo Zoo zu" /></a>
-            </div>
+  
+  if(isset($_POST["submit"]) && !empty($_POST["author"]) 
+  && !empty($_POST["email"]) && !empty($_POST["comment"]))
+  {
+    print_r($_POST);
+  }
+?>
 
             <div class="container discover">
                 <div class="side-bars">
@@ -128,35 +97,19 @@
                     </div>
                     <div class="answer-formular">
                         <h2>Leave a Comment</h2>
-                        <form>
+                        <form method="POST">
                             <div class="contact-inputs">
-                                <input type="text" id="name" name="author" placeholder="Full Name">
-                                <input type="email" placeholder="Email" id="email" name="email">
+                                <input type="text" id="name" name="author" placeholder="Full Name" required>
+                                <input type="email" placeholder="Email" id="email" name="email" required>
                             </div>
-                            <textarea name="comment" id="message" cols="40" rows="8" placeholder="Comment" ></textarea>
-                            <input type="submit" name="submit" id="submit" value="Send">
+                            <textarea name="comment" id="message" cols="40" rows="8" placeholder="Comment" required></textarea>
+                            <button class="submit" type="submit" name="submit">Send</button>
                         </form>
                     </div>
                 </div>
                
             </div>
 
-                <div class="footer">
-                    <div class="social_icons light-orange">
-                    <i class="fab fa-facebook-f"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-google-plus-g"></i>
-                    </div>
-                    <div class="copyright">
-                    <p>
-                        ©<span class="light-orange"> Matejix</span>. All rights
-                        reserved.
-                    </p>
-                    </div>
-                </div>
-            </div>
-    
-         <script src="./js/main.js"></script>
-  </body>
-</html>
+<?php 
+  include("./inc/footer.php")
+?>
