@@ -1,0 +1,121 @@
+body{
+    font-size: 1rem;
+    font-family: "Poppins","Roboto", sans-serif;
+    background-color: #ddd;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.side-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 300px;
+    background-color: #444;
+}
+
+.logo {
+}
+
+.logo img{
+    position: relative;
+    top: 0;
+    left: 20%;
+    width: 150px;
+    height: auto;
+}
+
+.side-bar ul{
+    position: relative;
+    top: 100px;
+    left: 85px;
+}
+
+.side-bar li{
+    font-family: "Poppins","Roboto", sans-serif;
+    line-height: 2em;
+    font-size: 1.2em;
+}
+
+.side-bar a{
+    color: #fff;
+    transition: 0.5s ease;
+}
+
+.side-bar a:hover{
+    color: rgb(255, 254, 205);
+}
+
+.table-of-posts{
+    font-family: "Poppins","Roboto", sans-serif;
+    position: relative;
+    top: 100px;
+    left:150px;
+    width: 50%;
+}
+
+.table-of-posts table,
+.table-of-posts th,
+.table-of-posts td{
+    
+    border: 1px solid #444;
+    border-collapse: collapse;
+}
+
+.table-of-posts tr:hover{
+    background-color: #ccc;
+}
+
+.table-of-posts th{
+    background-color: #444;
+    color: white;
+    padding: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+
+}
+
+.table-of-posts th:nth-child(2){
+    width: 80%;
+}
+ .table-of-posts th:nth-child(3){
+    width: 20%;
+}
+
+.table-of-posts table a:nth-child(1){
+    font-size: 0.8rem;
+    color: white;
+    background-color:rgb(14, 138, 80);
+    padding: 0.5rem 0.9rem;
+    border-radius: 5px;
+    margin-right: 1rem;
+    transition: 0.5s ease;
+}
+
+.table-of-posts table a:nth-child(1):hover{
+    background-color:rgb(24, 190, 113);
+}
+
+.delete i{
+    color:rgb(245, 82, 82);
+    transition: 0.5s ease;
+    
+}
+
+.delete i:hover{
+    color:rgb(245, 148, 148);
+    box-shadow: 3px 1px 174px -21px rgba(245, 82, 82);
+}
+
+.table-of-posts td{
+    text-align: center;
+    padding: 0.7rem 0;
+}

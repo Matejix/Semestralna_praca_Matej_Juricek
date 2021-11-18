@@ -1,3 +1,9 @@
+<?php 
+  session_start();
+  include 'db_connect.php';
+  $conn = mysqli_connect("localhost", "root", "", "zoozu");
+?>
+
 <!DOCTYPE html>
 <html lang="sk">
 <head>

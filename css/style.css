@@ -185,6 +185,7 @@ body {
   overflow: hidden;
   margin-left: -4em;
   box-shadow: 15em 0 #333;
+  transition: 1.5s ease;
   opacity: 1;
 }
 .home_picture:hover img {
@@ -1002,12 +1003,12 @@ font-size: 1.7em;
 
 .visually-hidden-left{
   opacity: 0;
-  transform: translateX(999px);
+  transform: translateX(-200px);
 }
 
 .visually-hidden-right{
   opacity: 0;
-  transform: translateX(-999px);
+  transform: translateX(-200px);
 }
 
 /*_______________RESPONSIVE_________________________________________________________________________________________________*/

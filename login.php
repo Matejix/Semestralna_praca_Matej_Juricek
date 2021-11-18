@@ -1,15 +1,55 @@
 <?php 
   include("./inc/header.php");
   include("./inc/menu.php");
+
+    if(isset($_SESSION['logged'])){
+        if( $_SESSION['isAdmin'] == '1'){
+            header("Location: admin.php");
+        }else{
+            header("Location: index.php");
+        }
+    }
+    $fault_alert="";
+
+    if(isset($_POST['submit-login'])){
+        $username = mysqli_real_escape_string($conn, $_POST['username']);
+        $password = mysqli_real_escape_string($conn, $_POST['password']);
+        if(empty($username) || empty($password)){
+            $fault_alert = "Nezadal si meno alebo heslo!";
+        }
+        else{
+            $query = 'SELECT id, admin FROM users WHERE meno = "'. $username .'" AND heslo = "'. md5($password) .'"';
+            $result = $conn->query($query);
+            if(mysqli_num_rows($result) > 0){
+                $user = $result->fetch_array();
+                $_SESSION['logged'] = true;
+                $_SESSION['loggedID'] = $user['id'];
+                $_SESSION['isAdmin'] = $user['admin'];
+                if( $_SESSION['isAdmin'] == '1'){
+                    header("Location: admin.php");
+                }else{
+                    header("Location: index.php");
+                }
+            } else{
+                $fault_alert = "Nesprávne meno alebo heslo";
+            }
+        }
+    }
+
 ?>
     <div class="login-box">
         <div class="profile-icon">
             <i class="far fa-user"></i>
         </div>
-        <form action="">
+        
+        <?php 
+            echo $fault_alert;
+        ?>
+        <form action="login.php" method='POST' onsubmit="return checkLoginForm(this)">
             <div class="login-input">
                 <i class="fas fa-user"></i>
                 <input type="text" name="username" id="username" placeholder="Username">
+                
             </div>
 
             <div class="login-input">
@@ -18,7 +58,7 @@
             </div>
 
             <a class="login-register-link" href="#">Not registered yet?</a>
-            <button class="submit" type="submit" name="submit">Login</button>
+            <button class="submit" type="submit" name="submit-login">Login</button>
         </form>
     </div>
 
@@ -32,13 +72,18 @@
             </div>
 
             <div class="login-input">
+                <i class="fas fa-user"></i>
+                <input type="text" name="username" id="username" placeholder="Name and surname" required>
+            </div>
+
+            <div class="login-input">
                 <i class="fas fa-lock"></i>
-                <input type="password" name="password" id="password" placeholder="Password" required>
+                <input type="password" name="password" id="password-register" placeholder="Password" required>
             </div>
 
             <div class="login-input">
                 <i class="fas fa-key"></i>
-                <input type="password" name="password" id="password" placeholder="Again password" required>
+                <input type="password" name="password" id="password-again" placeholder="Again password" required>
             </div>
 
             <div class="login-input">
@@ -55,7 +100,7 @@
                 <label for="">"Random question"</label>
                 <input type="text" name="question" id="question" placeholder="Your answer" required>
             </div>
-            <button class="submit" type="submit" name="submit" onclick="empty()">Register</button>
+            <button class="submit" type="submit" name="submit-register" onclick="empty()">Register</button>
         </form>
     </div>
 <?php 

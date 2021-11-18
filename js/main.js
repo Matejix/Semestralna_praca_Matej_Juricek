@@ -23,13 +23,15 @@ sideMenuShade.addEventListener('click',()=>{
 });
 
 
-info.addEventListener('mouseenter', ()=>{
-    infoInfo.classList.remove('visually-hidden');
-});
+if(info){
+    info.addEventListener('mouseenter', ()=>{
+        infoInfo.classList.remove('visually-hidden');
+    });
 
-info.addEventListener('mouseleave', ()=>{
-    infoInfo.classList.add('visually-hidden');
-});
+    info.addEventListener('mouseleave', ()=>{
+        infoInfo.classList.add('visually-hidden');
+    });
+}
 
 
 closeButtRegister.addEventListener('click', function (){
@@ -78,5 +80,13 @@ function empty(){
 
 /*______________________________________________________________________________*/
 
-
+function checkLoginForm(formular){
+    let password = formular.querySelector('#password');
+    if(password.value.length < 8){
+        password.value = "";
+        password.placeholder = "Heslo musí mať 8 znakov.";
+        password.style.border = "5px solid red";
+        return false;
+    }
+}
 

@@ -19,3 +19,7 @@
     <script src="./js/fslightbox.js"></script>
   </body>
 </html>
+
+<?php 
+        mysqli_close($conn);
+?>
