@@ -1,3 +1,8 @@
+<?php 
+  include './inc/admin_main_settings.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="sk">
 <head>
@@ -24,41 +29,45 @@
         <div class="logo">
             <img src="img/logo2.png" alt="">
         </div>
-        <ul>
+        <ul class="admin-links">
             <li><a href="#">Home</a></li>
             <li><a href="#">Gallery</a></li>
             <li><a href="#">About us</a></li>
-            <li><a href="#">Discover_more</a></li>
+            <li onclick="schovaj()"><a href="#">Discover_more</a></li>
             <li><a href="index.php">Back</a></li>
         </ul>
     </div>
 
-    <div class="table-of-posts">
+    <div id="discover" class="table-of-posts">
+    <a class="edit_link add" href="add.php">add</a>
         <table>
             <tr>
                 <th>ID</th>
                 <th>Heading</th>
                 <th></th>
             </tr>
+            <?php 
+                 $query = "SELECT id,nazov_clanku FROM posts";
+                 $result = $conn->query($query);
+                 if($result->num_rows > 0)
+                 while ($row = $result->fetch_assoc()):
+            ?>
             <tr>
-                <td>1</td>
-                <td>Nadpis</td>
+                <td><?= $row['id']?></td>
+                <td><?= $row['nazov_clanku']?></td>
                 <td>
-                    <a class="edit_link" href="#">edit</a>
-                    <a class="delete" href="#"><i class="fas fa-trash-alt"></i></a>
+                    <a class="edit_link" href="edit.php?id_clanku=<?= $row['id'] ?>">edit</a>
+                    <a class="delete" href="delete.php?id_clanku=<?= $row['id'] ?>"><i class="fas fa-trash-alt"></i></a>
                 </td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Nadpis2</td>
-                <td>
-                    <a class="edit_link" href="#">edit</a>
-                    <a class="delete" href="#"><i class="fas fa-trash-alt"></i></a>
-                </td>
-            </tr>
+            <?php
+                endwhile;
+            ?>
         </table>
     </div>
   </div>
    
+    <script src="js/admin.js"></script>
+
   </body>
 </html>

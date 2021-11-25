@@ -1,26 +1,18 @@
 <?php 
   include("./inc/header.php");
   include("./inc/menu.php");
-
-    if(isset($_SESSION['logged'])){
-        if( $_SESSION['isAdmin'] == '1'){
-            header("Location: admin.php");
-        }else{
-            header("Location: index.php");
-        }
-    }
     $fault_alert="";
 
     if(isset($_POST['submit-login'])){
-        $username = mysqli_real_escape_string($conn, $_POST['username']);
-        $password = mysqli_real_escape_string($conn, $_POST['password']);
+        $username = $conn->real_escape_string( $_POST['username']);
+        $password = $conn->real_escape_string( $_POST['password']);
         if(empty($username) || empty($password)){
             $fault_alert = "Nezadal si meno alebo heslo!";
         }
         else{
             $query = 'SELECT id, admin FROM users WHERE meno = "'. $username .'" AND heslo = "'. md5($password) .'"';
             $result = $conn->query($query);
-            if(mysqli_num_rows($result) > 0){
+            if($result->num_rows > 0){
                 $user = $result->fetch_array();
                 $_SESSION['logged'] = true;
                 $_SESSION['loggedID'] = $user['id'];

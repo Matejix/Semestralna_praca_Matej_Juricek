@@ -1,7 +1,5 @@
 <?php 
-  session_start();
-  include 'db_connect.php';
-  $conn = mysqli_connect("localhost", "root", "", "zoozu");
+ include './inc/main_settings.php';
 ?>
 
 <!DOCTYPE html>

@@ -11,10 +11,9 @@
 
                         <?php 
                             $query = "SELECT id, nazov_obrazku, nazov_clanku FROM posts ORDER BY datum_vytvorenia desc limit 3";
-                            $result = mysqli_query($conn,$query);
-                            $num_row = mysqli_num_rows($result);
-                            if($num_row > 0)
-                            while ($row = mysqli_fetch_assoc($result)):
+                            $result = $conn->query($query);
+                            if($result->num_rows > 0)
+                            while ($row = $result->fetch_assoc()):
                         ?>
 
                             <li>
@@ -35,10 +34,9 @@
 
                             <?php 
                                 $query = "SELECT * FROM category";
-                                $result = mysqli_query($conn,$query);
-                                $num_row = mysqli_num_rows($result);
-                                if($num_row > 0)
-                                while ($row = mysqli_fetch_assoc($result)):
+                                $result = $conn->query($query);
+                                if($result->num_rows > 0)
+                                while ($row = $result->fetch_assoc()):
                             ?>
 
                             <li><i class="fas fa-angle-right"></i><a href="category.php?categoryID=<?= $row['id']?>"><?= $row['nazov']?></a></li>
@@ -56,10 +54,9 @@
 
                                     <?php 
                                     $query = "SELECT * FROM tags";
-                                    $result = mysqli_query($conn,$query);
-                                    $num_row = mysqli_num_rows($result);
-                                    if($num_row > 0)
-                                    while ($row = mysqli_fetch_assoc($result)):
+                                    $result = $conn->query($query);
+                                    if($result->num_rows > 0)
+                                    while ($row = $result->fetch_assoc()):
                                 ?>
 
                                     <li><a href="category.php?tagID=<?= $row['id']?>"><?= $row['nazov']?></a></li>
@@ -79,7 +76,7 @@
                     $id = $_GET['clanokID'];
                 }
                 $query = "SELECT * FROM posts WHERE id = $id";
-                $result = mysqli_query($conn,$query);
+                $result = $conn->query($query);
                 $clanok = $result->fetch_array();
             ?>
         </div>
@@ -95,10 +92,9 @@
 
                         <?php 
                             $query = "SELECT * FROM post_tags JOIN tags on (post_tags.tag_fk = tags.id) WHERE post_fk = $id";
-                            $result = mysqli_query($conn,$query);
-                            $num_row = mysqli_num_rows($result);
-                            if($num_row > 0)
-                            while ($row = mysqli_fetch_assoc($result)):
+                            $result = $conn->query($query);
+                            if($result->num_rows > 0)
+                            while ($row = $result->fetch_assoc()):
                         ?>
 
                             <li><a href="category.php?tagID=<?= $row['id'] ?>"><?= $row['nazov'] ?></a></li>
@@ -113,17 +109,16 @@
 
                         <?php 
                         $query = "SELECT * FROM comment JOIN users on (comment.autor_id = users.id) WHERE clanok_id = $id";
-                        $result = mysqli_query($conn,$query);
-                        $num_row = mysqli_num_rows($result);
+                        $result = $conn->query($query);
                         ?>
 
                 <div class="comments-section" id="commentars">
                     <!-- skratka na echo -->
-                    <h2><span><?=$num_row ?></span> Comment</h2>
+                    <h2><span><?=$result->num_rows ?></span> Comment</h2>
 
                     <?php 
-                        if($num_row > 0)
-                        while ($row = mysqli_fetch_assoc($result)):
+                         if($result->num_rows > 0)
+                         while ($row = $result->fetch_assoc()):
                     ?>
 
                     <div class="comment">
