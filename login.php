@@ -18,12 +18,12 @@
                 $_SESSION['loggedID'] = $user['id'];
                 $_SESSION['isAdmin'] = $user['admin'];
                 if( $_SESSION['isAdmin'] == '1'){
-                    header("Location: admin.php");
+                    header("Location: ./admin/admin.php");
                 }else{
                     header("Location: index.php");
                 }
             } else{
-                $fault_alert = "Nesprávne meno alebo heslo";
+                $fault_alert = "Nesprávne meno alebo heslo ty gej!";
             }
         }
     }

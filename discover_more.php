@@ -92,6 +92,7 @@
 
                         <?php 
                             $query = "SELECT * FROM post_tags JOIN tags on (post_tags.tag_fk = tags.id) WHERE post_fk = $id";
+                            
                             $result = $conn->query($query);
                             if($result->num_rows > 0)
                             while ($row = $result->fetch_assoc()):
@@ -108,7 +109,7 @@
                 </div>
 
                         <?php 
-                        $query = "SELECT * FROM comment JOIN users on (comment.autor_id = users.id) WHERE clanok_id = $id";
+                        $query = "SELECT comment.id,meno_priezvisko,koment,autor_id FROM comment JOIN users on (comment.autor_id = users.id) WHERE clanok_id = $id";
                         $result = $conn->query($query);
                         ?>
 
@@ -139,6 +140,16 @@
 
                             </p>
                         </div>
+                        <?php 
+                            if(($row['autor_id'] === $_SESSION['loggedID']) || $_SESSION['isAdmin']):
+                        ?>
+                            <div class="comment-UD">
+                                <a class="edit_link" href="comments/edit.php?commentID=<?= $row['id'] ?>&clanokID=<?= $id?>">edit</a>
+                                <a class="delete" href="comments/delete.php?commentID=<?= $row['id'] ?>&clanokID=<?= $id?>" onclick="return confirm('Naozaj chcete vymazať?')"><i class="fas fa-trash-alt"></i></a>
+                            </div>
+                        <?php 
+                            endif;
+                        ?>
                     </div>
 
                     <?php 
@@ -158,8 +169,9 @@
                         <input type="hidden" name="clanokID" id="clanokID" value="<?= $id ?>">
                         <button class="submit" type="submit" name="submit">Send</button>
                     </form>
+    
                 </div>
-
+                    
                 <?php 
                     endif;
                 ?>

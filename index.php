@@ -10,7 +10,7 @@
           <div class="home-picture-wrapper">
             <div class="home_picture">
               <a href="discover_more.php"
-                ><img src="./img/home_picture.jpg" alt="picture of giraffe"
+                ><img src="./img/giraffee.jpg" alt="picture of giraffe"
               /></a>
             </div>
             <div class="arrow-right">

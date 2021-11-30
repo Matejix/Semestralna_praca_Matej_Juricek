@@ -386,6 +386,7 @@ body {
 }
 .comment {
   display: flex;
+  position: relative;
 }
 
 .comment img{
@@ -400,6 +401,8 @@ body {
 }
 .the_comment p{
   font-weight: 300;
+  word-break: break-all;
+  max-width: 80%;
 }
 .the_comment{
   margin-left: 2em ;
@@ -414,6 +417,26 @@ body {
 
 .the_comment a:hover{
   color:#f8d4ab
+}
+
+.comment-UD{
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.comment-UD a{
+  color:#c5a47e;
+  padding: 0.2rem;
+  text-decoration: none;
+}
+
+.comment-UD a:hover{
+  color:rgb(250, 98, 98);
+}
+
+.comment-UD a:nth-child(1):hover{
+  color:rgb(119, 252, 119);
 }
 
 .answer-formular{
@@ -1044,6 +1067,13 @@ font-size: 1.7em;
   text-align: left;
 }
 
+
+.category-back-arrow{
+  font-size: 2em; 
+  color:#c5a47e; 
+  text-align:left;
+  margin-left: 50px;
+}
 
 .list-of-articles{
   display: grid;

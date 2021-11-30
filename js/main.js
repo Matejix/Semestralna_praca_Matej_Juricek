@@ -82,11 +82,36 @@ function empty(){
 
 function checkLoginForm(formular){
     let password = formular.querySelector('#password');
-    if(password.value.length < 8){
+    let username = formular.querySelector('#username');
+    let error = false;
+    
+    if(password.value.length === 0){
+        password.value = "";
+        password.placeholder = "Nezadali ste heslo!";
+        password.style.border = "5px solid red";
+        error = true;
+    }else {
+        username.style.border = "none";
+    }
+    
+    if(password.value.length < 8 && password.value.length > 0 ){
         password.value = "";
         password.placeholder = "Heslo musí mať 8 znakov.";
         password.style.border = "5px solid red";
-        return false;
+        error = true;
+    }
+
+    if(username.value.length === 0){
+        username.value = "";
+        username.placeholder = "Nezadali ste meno!";
+        username.style.border = "5px solid red";
+        error = true;
+    } else {
+        username.style.border = "none";
+    }
+
+    if(error){
+        return false; // zabrani potvrdit formular
     }
 }
 

@@ -1,7 +1,7 @@
     <?php
         session_start();
 
-        $conn = mysqli_connect("localhost", "root", "", "zoozu");
+        include 'main_settings.php';
           
         // Check connection
         if($conn === false){

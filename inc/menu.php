@@ -20,11 +20,12 @@
 
             <li class="menu-item"><a href="index.php">Home</a></li>
             <li class="menu-item"><a href="about_us.php">About</a></li>
+            <li class="menu-item"><a href="category.php">Articles</a></li>
             <li class="menu-item"><a href="gallery.php">Gallery</a></li>
 
             <?php 
               if(isset($_SESSION['logged']) && $_SESSION['isAdmin'] == '1'){
-                echo '<li id="admin" class="menu-item"><a href="admin.php">Admin</a></li>';
+                echo '<li id="admin" class="menu-item"><a href="admin/admin.php">Admin</a></li>';
               }
             ?>
 

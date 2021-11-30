@@ -1,5 +1,5 @@
 <?php 
-  include './inc/admin_main_settings.php';
+  include '../inc/admin_main_settings.php';
 
 ?>
 
@@ -19,8 +19,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/admin.css">
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/normalize.css">
 </head>
   <body>
 
@@ -34,7 +34,7 @@
             <li><a href="#">Gallery</a></li>
             <li><a href="#">About us</a></li>
             <li onclick="schovaj()"><a href="#">Discover_more</a></li>
-            <li><a href="index.php">Back</a></li>
+            <li><a href="../index.php">Back</a></li>
         </ul>
     </div>
 
@@ -57,7 +57,7 @@
                 <td><?= $row['nazov_clanku']?></td>
                 <td>
                     <a class="edit_link" href="edit.php?id_clanku=<?= $row['id'] ?>">edit</a>
-                    <a class="delete" href="delete.php?id_clanku=<?= $row['id'] ?>"><i class="fas fa-trash-alt"></i></a>
+                    <a class="delete" href="delete.php?id_clanku=<?= $row['id'] ?>" onclick="return confirm('Naozaj chcete vymazať?')"><i class="fas fa-trash-alt"></i></a>
                 </td>
             </tr>
             <?php
@@ -67,7 +67,7 @@
     </div>
   </div>
    
-    <script src="js/admin.js"></script>
+    <script src="./js/admin.js"></script>
 
   </body>
 </html>
