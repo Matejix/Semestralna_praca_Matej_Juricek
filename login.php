@@ -23,7 +23,7 @@
                     header("Location: index.php");
                 }
             } else{
-                $fault_alert = "Nesprávne meno alebo heslo ty gej!";
+                $fault_alert = "Nesprávne meno alebo heslo!";
             }
         }
     }
