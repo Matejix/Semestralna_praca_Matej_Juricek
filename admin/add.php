@@ -40,9 +40,10 @@
             <div class="form-updating">
                 <form name="form" method="post" action="" > 
                     <input name="add" type="hidden" value="1">
-                    <p><input name="obrazok" type="file" /></p>
-                    <p><input name="nadpis" type="text" placeholder="Nadpis clanku" value="<?=$_POST['nadpis']?>" /></p>
-                    <p><textarea name="clanok" type="text" rows="20" cols="80" placeholder="Sem vlozte text"><?=$_POST['clanok']?></textarea></p>
+                    <p><input name="obrazok" type="file" style="color:white;"/></p>
+                    <p><input name="nadpis" type="text" placeholder="Nadpis clanku" value="<?php if(isset($_POST['clanok'])) {echo $_POST['clanok'];}?>"/></p>
+                    <label style="color:white;" for="">Napíšte článok:</label>
+                    <p><textarea name="clanok" type="text" rows="20" cols="80" placeholder="Sem vlozte text"><?php if(isset($_POST['clanok'])) {echo $_POST['clanok'];}?></textarea></p>
                     <p><select name="autor"> 
                         <option value="1">Admin</option>
                         <option value="0">User/Admin</option>
@@ -58,4 +59,4 @@
             </div>
         </div>
     </body>
-    </html>
+</html>

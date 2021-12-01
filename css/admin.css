@@ -225,3 +225,65 @@ input[value^="Add to database"]{
 .hide{
     display: none;
 }
+
+@media screen and (max-width: 1445px){
+    .form-updating{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 1180px){
+    .form-updating{
+        width:70%;
+    }
+
+}
+
+@media screen and (max-width: 1180px){
+    .form-updating{
+        width:80%;
+    }
+}
+@media screen and (max-width: 992px) {
+/*_______________________RESPONSIVE _______________________*/
+
+/*_____________ADMIN PAGE_______________*/
+.side-bar{
+    height: 80px;
+    width: 100%;
+  }
+  
+  .side-bar ul{
+    top:0;
+    display:flex;
+  }
+  
+  .side-bar li{
+    padding: 0 0.5em;
+  }
+
+  .table-of-posts{
+      left:0;
+      width:90%;
+  }
+}
+
+@media screen and (max-width: 895px){
+    .form-updating{
+        width:100%;
+        padding: 1em 0;
+    }
+}
+@media screen and (max-width: 750px) {
+    .form-updating textarea {
+        width: 70%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .side-bar ul{
+        left: 25px;
+    }
+    .side-bar li{
+        font-size: 1.1rem;
+      }
+}

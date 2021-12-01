@@ -1,8 +1,8 @@
 'use strict';
 
-let sortBtn = document.querySelectorAll('.filter-menu');
-let sortItem = document.querySelectorAll('.gallery-photos');
-if(sortBtn && sortItem){
+let sortBtn = document.querySelector('.filter-menu').children;
+let sortItem = document.querySelector('.gallery-photos').children;
+// if(sortBtn && sortItem){
     for(let i = 0; i < sortBtn.length; i++){
         sortBtn[i].addEventListener('click', function(){
             let targetData = this.getAttribute('data-target');
@@ -17,4 +17,4 @@ if(sortBtn && sortItem){
             }
         });
     }
-}
+//}

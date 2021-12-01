@@ -141,6 +141,7 @@
                             </p>
                         </div>
                         <?php 
+                            if(isset($_SESSION['loggedID']) && isset($_SESSION['isAdmin'])):
                             if(($row['autor_id'] === $_SESSION['loggedID']) || $_SESSION['isAdmin']):
                         ?>
                             <div class="comment-UD">
@@ -148,6 +149,7 @@
                                 <a class="delete" href="comments/delete.php?commentID=<?= $row['id'] ?>&clanokID=<?= $id?>" onclick="return confirm('Naozaj chcete vymazať?')"><i class="fas fa-trash-alt"></i></a>
                             </div>
                         <?php 
+                            endif;
                             endif;
                         ?>
                     </div>

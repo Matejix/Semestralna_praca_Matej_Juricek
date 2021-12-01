@@ -402,7 +402,7 @@ body {
 .the_comment p{
   font-weight: 300;
   word-break: break-all;
-  max-width: 80%;
+  max-width: 70%;
 }
 .the_comment{
   margin-left: 2em ;
@@ -1263,6 +1263,12 @@ font-size: 1.7em;
 .about-wrapper {
   width: 100%;
 }
+
+/*________ARTICLES PAGE___________*/
+
+.list-of-articles{
+  grid-template-columns: repeat(3, 1fr);
+}
 }
 
 @media screen and (max-width: 992px) {
@@ -1312,6 +1318,13 @@ font-size: 1.7em;
     height: auto;
   }
 
+  /*________ARTICLES PAGE___________*/
+
+  .list-of-articles{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
   /*_______-ABOUT-US-PAGE________*/
 .about-img-wrapper {
   height: 260px;
@@ -1334,6 +1347,9 @@ font-size: 1.7em;
 .review i {
   font-size: 2em;
 }
+
+
+
 }
 
 @media screen and (max-width: 790px) {
@@ -1387,6 +1403,11 @@ font-size: 1.7em;
     top: -5px;
     right: -5px;
   }
+
+  .part-one,
+  .part-two{
+    flex-direction: column;
+  }
   
   .footer{
     padding-top: .5em;
@@ -1439,6 +1460,10 @@ font-size: 1.7em;
   margin: 0 20px 0 0;
 }
 
+.the_comment p{
+  max-width: 60%;
+}
+
 /*______-ABOUT-US-PAGE_________*/
 .about-img-wrapper {
   display: none;
@@ -1450,6 +1475,11 @@ font-size: 1.7em;
   .review{
     width: 80%;
   }
+
+/*______________Gallery page___________*/
+.gallery-photos{
+  grid-template-columns: repeat(1, 1fr);
+}  
 }
 
 @media screen and (max-width: 576px){
@@ -1555,6 +1585,17 @@ font-size: 1.7em;
   
   .review{
     width: 100%;
+  }
+
+  /*________ARTICLES PAGE___________*/
+
+  .list-of-articles{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  /*________________LOGIN PAGE_______________*/
+  .login-box{
+    width: 370px;
   }
   }
 
