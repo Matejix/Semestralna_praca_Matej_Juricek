@@ -41,7 +41,7 @@
                 <form name="form" method="post" action="" > 
                     <input name="add" type="hidden" value="1">
                     <p><input name="obrazok" type="file" style="color:white;"/></p>
-                    <p><input name="nadpis" type="text" placeholder="Nadpis clanku" value="<?php if(isset($_POST['clanok'])) {echo $_POST['clanok'];}?>"/></p>
+                    <p><input name="nadpis" type="text" placeholder="Nadpis clanku" value="<?php if(isset($_POST['nadpis'])) {echo $_POST['nadpis'];}?>"/></p>
                     <label style="color:white;" for="">Napíšte článok:</label>
                     <p><textarea name="clanok" type="text" rows="20" cols="80" placeholder="Sem vlozte text"><?php if(isset($_POST['clanok'])) {echo $_POST['clanok'];}?></textarea></p>
                     <p><select name="autor"> 
